@@ -1,32 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto, Asap, Catamaran } from "next/font/google";
 import "./globals.css";
-import { Providers } from "./providers"; // Importando o que criamos
+import { Providers } from "./providers";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-roboto" });
+const asap = Asap({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-asap" });
+const catamaran = Catamaran({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-catamaran" });
 
 export const metadata: Metadata = {
-  title: "Wellhub Clone - Projeto ADS",
-  description: "Desenvolvimento Web com Next.js e Chakra UI",
+  title: "Curso em Vídeo",
+  description: "Estude gratuitamente tecnologia",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-br" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="pt-br" className={`${roboto.variable} ${asap.variable} ${catamaran.variable}`}>
       <body>
-        {/* O Providers deve envolver o children para o Chakra UI funcionar em todo o site */}
         <Providers>{children}</Providers>
       </body>
     </html>

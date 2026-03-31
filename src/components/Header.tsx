@@ -1,48 +1,54 @@
 'use client'
-
-import { Box, Flex, Image, Button, Link, HStack, Popover } from '@chakra-ui/react';
+import { Box, Flex, Image, HStack, Link } from '@chakra-ui/react';
 
 export default function Header() {
+  const menuStyle = {
+    fontFamily: 'var(--font-asap), sans-serif',
+    fontWeight: "400",
+    fontSize: "18px",
+    lineHeight: "33px",
+    color: "white", // Mudado para branco
+    _hover: { color: "rgb(0, 229, 252)", textDecoration: "none" }, // Hover no azul ciano do título
+    transition: "all 0.2s"
+  };
+
   return (
-    <Box as="nav" bg="#F7F2E9" px="8" py="4" borderBottom="1px solid" borderColor="gray.200">
+    <Box 
+      as="nav" 
+      bg="#2222FF" // Fundo azul vibrante igual ao Hero
+      px="8" 
+      py="4" 
+      borderBottom="1px solid" 
+      borderColor="rgba(255,255,255,0.1)" // Borda sutil para separar do Hero
+      position="sticky"
+      top="0"
+      zIndex="1000"
+    >
       <Flex align="center" maxW="1200px" mx="auto" justify="space-between">
+        {/* Logo do Curso em Vídeo */}
+        <Image 
+          src="https://www.cursoemvideo.com/wp-content/uploads/2019/08/cursoemvideo-logo.png" 
+          alt="Curso em Vídeo"
+          h="50px" 
+          filter="brightness(0) invert(1)" // Truque de CSS para deixar a logo branca, se necessário
+        />
         
-        <HStack gap="8">
-          <Image src="/logo-wellhub.png" alt="Wellhub" h="30px" />
-
-          <Link fontWeight="medium" fontSize="sm">Procurar academias e apps</Link>
-
-          {/* Menu Planos */}
-          <Popover.Root>
-            <Popover.Trigger asChild>
-              <Button variant="ghost" fontWeight="medium" fontSize="sm">Planos e preços</Button>
-            </Popover.Trigger>
-            <Popover.Content p="4" bg="white" borderRadius="xl">
-                <Link display="block" py="2">Para empresas</Link>
-                <Link display="block" py="2">Para colaboradores</Link>
-            </Popover.Content>
-          </Popover.Root>
-
-          <Link fontWeight="medium" fontSize="sm">Para empresas</Link>
-
-          {/* Menu Recursos */}
-          <Popover.Root>
-            <Popover.Trigger asChild>
-              <Button variant="ghost" fontWeight="medium" fontSize="sm">Recursos</Button>
-            </Popover.Trigger>
-            <Popover.Content p="4" bg="white" borderRadius="xl">
-                <Link display="block" fontWeight="bold">Blog</Link>
-                <Link display="block" py="1">Central de Ajuda</Link>
-                <Link display="block" py="1">Novidades</Link>
-            </Popover.Content>
-          </Popover.Root>
-        </HStack>
-
-        <HStack gap="4">
-          <Button variant="ghost" fontSize="sm">Login</Button>
-          <Button bg="#D53F8C" color="white" borderRadius="full" px="6" _hover={{ bg: '#b83279' }}>
-            Começar
-          </Button>
+        <HStack gap="5" flexWrap="wrap">
+          {[
+            "Cursos", 
+            "Sobre", 
+            "Assine", 
+            "Patrocine", 
+            "Blog", 
+            "Login", 
+            "Cadastre-se", 
+            "Validação de Certificado", 
+            "Hall da Fama"
+          ].map((item) => (
+            <Link key={item} {...menuStyle} href="#">
+              {item}
+            </Link>
+          ))}
         </HStack>
       </Flex>
     </Box>
