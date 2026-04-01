@@ -1,19 +1,18 @@
 'use client'
-import { Box, Container, Flex, Heading, Image, Button } from '@chakra-ui/react';
+import { Box, Container, Flex, Heading, Image, Button, Link } from '@chakra-ui/react';
 
 export default function InstitutionalSupport() {
   const partners = [
-    { name: "Hostnet", src: "https://www.cursoemvideo.com/wp-content/uploads/2019/07/apoiador-hostnet.png" },
-    { name: "Estudonauta", src: "https://www.cursoemvideo.com/wp-content/uploads/2019/07/apoiador-estudonauta.png" },
-    { name: "Recode", src: "https://www.cursoemvideo.com/wp-content/uploads/2019/07/apoiador-recode.png" },
-    { name: "Asus", src: "https://www.cursoemvideo.com/wp-content/uploads/2019/07/Asus.png" },
-    { name: "FEC", src: "https://www.cursoemvideo.com/wp-content/uploads/2019/07/FEC-logo.png" },
+    { name: "Hostnet", src: "https://www.cursoemvideo.com/wp-content/uploads/2019/07/apoiador-hostnet.png", href: "https://www.hostnet.com.br/" },
+    { name: "Estudonauta", src: "https://www.cursoemvideo.com/wp-content/uploads/2019/07/apoiador-estudonauta.png", href: "https://www.estudonauta.com/" },
+    { name: "Recode", src: "https://www.cursoemvideo.com/wp-content/uploads/2019/07/apoiador-recode.png", href: "https://recode.org.br/" },
+    { name: "Asus", src: "https://www.cursoemvideo.com/wp-content/uploads/2019/07/Asus.png", href: "https://www.asus.com/br/laptops/for-home/all-series/?utm_source=cursoemvideo&utm_medium=partner&utm_id=influencer" },
+    { name: "FEC", src: "https://www.cursoemvideo.com/wp-content/uploads/2019/07/FEC-logo.png", href: "https://www.souestudante.tech/" },
   ];
 
   return (
     <Box bg="rgb(245, 245, 245)" py="12">
       <Container maxW="1200px">
-        {/* Título da Seção */}
         <Heading
           fontFamily="'Catamaran', sans-serif"
           fontWeight="700"
@@ -26,7 +25,6 @@ export default function InstitutionalSupport() {
           Apoio Institucional
         </Heading>
 
-        {/* Grid de Logotipos */}
         <Flex 
           justify="space-between" 
           align="center" 
@@ -35,20 +33,25 @@ export default function InstitutionalSupport() {
           mb="8"
         >
           {partners.map((partner) => (
-            <Image
-              key={partner.name}
-              src={partner.src}
-              alt={partner.name}
-              maxH="50px"
-              objectFit="contain"
-              opacity="0.8"
-            />
+            <Link key={partner.name} href={partner.href} target="_blank">
+              <Image
+                src={partner.src}
+                alt={partner.name}
+                maxH="50px"
+                objectFit="contain"
+                opacity="0.8"
+                _hover={{ opacity: 1 }}
+                transition="0.2s"
+              />
+            </Link>
           ))}
         </Flex>
 
-        {/* Botão Seja um Apoiador - Alinhado à direita conforme imagem 13 */}
         <Flex justify="flex-end" mt="4">
           <Button
+            as="a"
+            href="https://www.cursoemvideo.com/seja-um-patrocinador/"
+            target="_blank"
             variant="outline"
             borderColor="rgba(0, 0, 0, 0.1)"
             borderRadius="4px"

@@ -7,9 +7,8 @@ import Support from "../components/Support";
 import StudentCard from "../components/StudentCard";
 import PromoBanner from "../components/PromoBanner";
 import InstitutionalSupport from "../components/InstitutionalSupport";
-import Footer from "../components/Footer"; // Importação adicionada
+import Footer from "../components/Footer";
 
-// Componente de Destaque de Cursos
 function CourseHighlight() {
   return (
     <Box bg="white" py="20">
@@ -18,22 +17,22 @@ function CourseHighlight() {
           align="center" 
           justify="space-between" 
           direction={{ base: "column-reverse", md: "row" }}
-          gap="10"
+          gap="20"
         >
-          {/* 1. Imagem à ESQUERDA (Ativo-12) */}
-          <Box flex="1">
+          {/* Imagem à ESQUERDA maior */}
+          <Box flex="1.2">
             <Image 
               src="https://www.cursoemvideo.com/wp-content/uploads/2019/08/Ativo-12.png" 
               alt="Tecnologia"
-              w="800px"
-              maxW="100%"
+              w="100%"
+              maxW="650px"
               h="auto"
               objectFit="contain"
             />
           </Box>
 
-          {/* 2. Texto à DIREITA com quebras e cor específica */}
-          <Box flex="1" textAlign={{ base: "center", md: "left" }}>
+          {/* Texto à DIREITA */}
+          <Box flex="0.8" textAlign={{ base: "center", md: "left" }}>
             <Heading 
               fontFamily="var(--font-catamaran), sans-serif"
               fontWeight="700"
@@ -48,8 +47,10 @@ function CourseHighlight() {
               qualidade.
             </Heading>
 
-            {/* Botão Conhecer Azul */}
             <Button 
+              as="a"
+              href="https://www.cursoemvideo.com/cursos/"
+              target="_blank"
               bg="#2222FF" 
               color="white"
               borderRadius="full"
@@ -67,7 +68,6 @@ function CourseHighlight() {
               Conhecer
             </Button>
           </Box>
-
         </Flex>
       </Container>
     </Box>
@@ -84,7 +84,7 @@ export default function Home() {
       <StudentCard />
       <PromoBanner />
       <InstitutionalSupport />
-      <Footer /> {/* Chamada do footer adicionada aqui */}
+      <Footer />
     </Box>
   );
 }

@@ -14,7 +14,6 @@ export default function StudentCard() {
           direction={{ base: "column", md: "row" }}
         >
           <Flex align="center" gap="8">
-            {/* Logo FEC - Tamanho 135x29px conforme solicitado */}
             <Image 
               src="https://www.cursoemvideo.com/wp-content/uploads/2023/06/FEC-logo-branco.png" 
               alt="Logo FEC"
@@ -23,10 +22,8 @@ export default function StudentCard() {
               objectFit="contain"
             />
 
-            {/* Traço Blanco Vertical */}
             <Box w="1px" h="50px" bg="white" opacity="0.5" />
 
-            {/* Textos com os parâmetros exatos */}
             <Stack gap="0">
               <Heading
                 fontFamily="'Roboto', sans-serif"
@@ -50,8 +47,10 @@ export default function StudentCard() {
             </Stack>
           </Flex>
 
-          {/* Botão Solicitar */}
           <Button
+            as="a"
+            href="https://www.souestudante.tech/"
+            target="_blank"
             bg="white"
             color="rgb(28, 0, 81)"
             borderRadius="full"

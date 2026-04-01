@@ -1,17 +1,20 @@
 'use client'
-import { Box, Container, Flex, Text, Button, Image, VStack } from '@chakra-ui/react';
+import { Box, Container, Text, Button, Image, VStack } from '@chakra-ui/react';
 
 export default function PromoBanner() {
   return (
     <Box 
-      bg="rgb(28, 0, 81)" // Cor de fundo azul muito escura conforme imagens
+      bg="rgb(28, 0, 81)"
       py="12"
       position="relative"
       overflow="hidden"
+      backgroundImage="url('/banner-estudonauta8.jpg')"
+      backgroundRepeat="no-repeat"
+      backgroundPosition="right bottom"
+      backgroundSize="contain"
     >
-      <Container maxW="1200px">
-        <VStack spacing={6} align="center">
-          {/* Logo Estudonauta - Parâmetros exatos solicitados */}
+      <Container maxW="1200px" position="relative" zIndex="1">
+        <VStack gap={6} align="center">
           <Image 
             src="https://www.cursoemvideo.com/wp-content/uploads/2019/08/logo-01.png" 
             alt="Logo Estudonauta"
@@ -20,15 +23,14 @@ export default function PromoBanner() {
             objectFit="contain"
           />
 
-          {/* Selo Vagas Abertas - Fundo com opacidade conforme imagem 3 */}
           <Box 
-            bg="rgba(255, 255, 255, 0.15)" // Fundo levemente diferente/claro
+            bg="rgba(255, 255, 255, 0.15)"
             px="6" 
             py="2" 
             borderRadius="md"
           >
             <Text
-              fontFamily="'Asap', sans-serif" // Parâmetros solicitados
+              fontFamily="'Asap', sans-serif"
               fontStyle="normal"
               fontWeight="800"
               fontSize="20px"
@@ -40,7 +42,6 @@ export default function PromoBanner() {
             </Text>
           </Box>
 
-          {/* Texto de Chamada */}
           <Text
             fontFamily="'Asap', sans-serif"
             fontWeight="400"
@@ -52,8 +53,10 @@ export default function PromoBanner() {
             conhecimentos com o Estudonauta!
           </Text>
 
-          {/* Botão Conhecer - Fundo Branco conforme imagem 11 */}
           <Button
+            as="a"
+            href="https://www.estudonauta.com/"
+            target="_blank"
             bg="white"
             color="rgb(28, 0, 81)"
             borderRadius="full"
@@ -71,19 +74,6 @@ export default function PromoBanner() {
           </Button>
         </VStack>
       </Container>
-
-      {/* Ilustração opcional ao fundo à direita (foguete) conforme imagem 10 */}
-      <Image 
-        src="https://www.estudonauta.com/wp-content/uploads/2022/12/foguete-background.png" 
-        position="absolute"
-        right="0"
-        bottom="0"
-        h="100%"
-        opacity="0.4"
-        zIndex="0"
-        pointerEvents="none"
-        display={{ base: "none", lg: "block" }}
-      />
     </Box>
   );
 }

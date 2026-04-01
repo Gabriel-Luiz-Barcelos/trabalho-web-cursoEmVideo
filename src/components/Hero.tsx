@@ -3,7 +3,15 @@ import { Box, Flex, Heading, Text, Button, Image, Container, Stack } from '@chak
 
 export default function Hero() {
   return (
-    <Box bg="#2222FF" py="80px">
+    <Box 
+      bg="#2222FF" 
+      py="80px"
+      backgroundImage="url('/fundo08.jpg')"
+      backgroundRepeat="no-repeat"
+      backgroundPosition="right center"
+      backgroundSize="cover"
+      backgroundAttachment="local"
+    >
       <Container maxW="1200px">
         <Flex 
           align="center" 
@@ -16,8 +24,8 @@ export default function Hero() {
             <Heading 
               fontFamily="var(--font-roboto), sans-serif"
               fontWeight="700"
-              fontSize="110px"
-              lineHeight="88px"
+              fontSize="80px"
+              lineHeight="82px"
               color="rgb(0, 229, 252)"
             >
               Paixão por <br /> 
@@ -32,29 +40,26 @@ export default function Hero() {
               Estude gratuitamente e aprenda com conteúdo e professores de qualidade.
             </Text>
 
-            {/* BOTÃO COM HOVER RGB(252, 252, 252) */}
             <Button 
-              bg="#2222FF" 
+              bg="transparent" 
               color="white"
               size="lg" 
               borderRadius="full" 
-              px="12" 
-              h="60px"
-              fontSize="20px"
+              px="10" 
+              h="50px"
+              fontSize="18px"
               fontFamily="var(--font-asap), sans-serif"
               fontWeight="700"
-              border="2px solid white"
-              borderBottom="4px solid rgba(0, 0, 0, 0.2)"
+              border="1.5px solid white"
               transition="all 0.2s"
               _hover={{ 
-                bg: "rgb(252, 252, 252)", // Cor solicitada para o hover
-                color: "#2222FF", // Inverte a cor do texto para manter legível
+                bg: "rgb(252, 252, 252)",
+                color: "#2222FF",
                 transform: "translateY(-2px)"
               }}
               _active={{
                 bg: "rgba(255, 255, 255, 0.8)",
                 transform: "translateY(2px)",
-                borderBottomWidth: "0px"
               }}
               w="fit-content"
             >
@@ -63,12 +68,13 @@ export default function Hero() {
           </Stack>
 
           {/* Lado Direito: Imagem do Guanabara */}
-          <Box mt={{ base: 10, md: 0 }}>
+          <Box mt={{ base: 10, md: 0 }} alignSelf="flex-end">
              <Image 
                src="https://www.cursoemvideo.com/wp-content/uploads/2019/08/guana6.png" 
                alt="Gustavo Guanabara"
-               maxW="550px"
+               maxW="680px"
                objectFit="contain"
+               mb="-80px"
              />
           </Box>
         </Flex>

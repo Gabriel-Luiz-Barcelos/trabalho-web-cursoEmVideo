@@ -14,7 +14,7 @@ export default function Support() {
     },
     {
       nome: "Angelo Coelho",
-      texto: '“Começo a entender que grandes empresas ou grandes metas se constroem aos poucos ao decorrer dos anos. Vejo quanta qualidade e quanta dedicação foi aumentando no "CursoemVideo". Todos teus alunos lembrarão do Senhor Guanabara! Gracias!"'
+      texto: '"Começo a entender que grandes empresas ou grandes metas se constroem aos poucos ao decorrer dos anos. Vejo quanta qualidade e quanta dedicação foi aumentando no "CursoemVideo". Todos teus alunos lembrarão do Senhor Guanabara! Gracias!"'
     }
   ];
 
@@ -32,7 +32,23 @@ export default function Support() {
             <Text fontFamily="var(--font-asap), sans-serif" fontSize="20px" color="rgb(38, 28, 63)">
               Ajude o Curso em Vídeo a continuar <br /> produzindo ainda mais!
             </Text>
-            <Button bg="white" color="#2222FF" border="2px solid #2222FF" borderRadius="full" px="10" h="54px" fontSize="18px" fontWeight="700" _hover={{ bg: "#2222FF", color: "white", transform: "translateY(-2px)" }} transition="all 0.3s" w="fit-content" alignSelf={{ base: "center", md: "flex-start" }}>
+            <Button 
+              as="a"
+              href="https://www.cursoemvideo.com/apoie/"
+              target="_blank"
+              bg="white" 
+              color="#2222FF" 
+              border="2px solid #2222FF" 
+              borderRadius="full" 
+              px="10" 
+              h="54px" 
+              fontSize="18px" 
+              fontWeight="700" 
+              _hover={{ bg: "#2222FF", color: "white", transform: "translateY(-2px)" }} 
+              transition="all 0.3s" 
+              w="fit-content" 
+              alignSelf={{ base: "center", md: "flex-start" }}
+            >
               Quero ser um Apoiador!
             </Button>
           </Stack>
@@ -56,21 +72,20 @@ export default function Support() {
             </Heading>
           </Box>
 
-          {/* Card de Depoimento */}
+          {/* Card de Depoimento com altura fixa */}
           <Box 
             bg="#D7F8F9"
             p="12" 
             borderRadius="3xl" 
             flex="1" 
             maxW="650px" 
-            minH="380px" 
+            h="380px"
             display="flex"
             flexDirection="column"
-            justifyContent="center"
+            justifyContent="space-between"
             boxShadow="sm"
           >
-            <VStack align="start" gap="4" h="100%">
-              {/* Nome do Aluno - Parâmetros Roboto */}
+            <VStack align="start" gap="4" flex="1">
               <Text 
                 fontFamily="'Roboto', sans-serif"
                 fontWeight="700" 
@@ -81,33 +96,32 @@ export default function Support() {
                 {testimonials[index].nome}
               </Text>
 
-              {/* Texto do Comentário - Parâmetros Asap */}
               <Text 
                 fontFamily="var(--font-asap), sans-serif"
                 fontWeight="400"
-                fontSize="24px" 
+                fontSize="20px" 
                 color="rgb(38, 28, 63)" 
-                lineHeight="48px"
+                lineHeight="36px"
                 fontStyle="normal"
               >
                 {testimonials[index].texto}
               </Text>
-              
-              <Flex gap="3" mt="auto" pt="8" w="100%" justify="center">
-                {testimonials.map((_, i) => (
-                  <Box 
-                    key={i}
-                    onClick={() => setIndex(i)}
-                    cursor="pointer"
-                    w="12px" 
-                    h="12px" 
-                    borderRadius="full" 
-                    bg={index === i ? "#2222FF" : "gray.300"} 
-                    transition="0.3s"
-                  />
-                ))}
-              </Flex>
             </VStack>
+            
+            <Flex gap="3" pt="4" w="100%" justify="center">
+              {testimonials.map((_, i) => (
+                <Box 
+                  key={i}
+                  onClick={() => setIndex(i)}
+                  cursor="pointer"
+                  w="12px" 
+                  h="12px" 
+                  borderRadius="full" 
+                  bg={index === i ? "#2222FF" : "gray.300"} 
+                  transition="0.3s"
+                />
+              ))}
+            </Flex>
           </Box>
         </Flex>
       </Container>
