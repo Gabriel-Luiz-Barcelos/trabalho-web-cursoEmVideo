@@ -49,7 +49,7 @@ function CourseHighlight() {
 
             <Button 
               as="a"
-              href="https://www.cursoemvideo.com/cursos/"
+              {...({ href: "https://www.cursoemvideo.com/cursos/" } as any)}
               target="_blank"
               bg="#2222FF" 
               color="white"
