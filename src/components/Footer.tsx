@@ -63,7 +63,7 @@ export default function Footer() {
           
           {/* Coluna 1: Logo e Descrição */}
           <GridItem>
-            <Stack spacing="4">
+            <Stack gap="4">
               <Image 
                 src="https://www.cursoemvideo.com/wp-content/uploads/2019/08/cursoemvideo-logo.png" 
                 alt="Logo Curso em Vídeo" 
@@ -121,9 +121,9 @@ export default function Footer() {
 
           {/* Coluna 2: Últimas do Blog */}
           <GridItem pl="8">
-            <Stack spacing="4">
+            <Stack gap="4">
               <Heading {...headingStyle}>Últimas do Blog</Heading>
-              <Stack spacing="3">
+              <Stack gap="3">
                 {blogPosts.map((post, index) => (
                   <Link 
                     key={index} 
@@ -141,7 +141,7 @@ export default function Footer() {
 
           {/* Coluna 3: Redes Sociais */}
           <GridItem>
-            <Stack spacing="4" align="center">
+            <Stack gap="4" align="center">
               <Heading {...headingStyle}>Acompanhe</Heading>
               <Flex gap="3">
                 {socialLinks.map((social, index) => (
