@@ -1,17 +1,20 @@
 'use client'
-import { Box, Container, Flex, Heading, Text, Button, Image, Stack } from '@chakra-ui/react';
+import { Box, Container, Flex, Heading, Text, Button, Image } from '@chakra-ui/react';
 
 export default function StudentCard() {
   return (
     <Box 
-      bgImage="linear-gradient(90deg, #1A0DAB 0%, #2222FF 100%)" 
-      py="6"
+      bgImage="url('https://www.cursoemvideo.com/wp-content/uploads/2023/06/bg-1.jpg')"
+      bgSize="cover"
+      bgPosition="center"
+      py="12"
     >
       <Container maxW="1200px">
         <Flex 
           align="center" 
           justify="space-between" 
           direction={{ base: "column", md: "row" }}
+          gap="8"
         >
           <Flex align="center" gap="8">
             <Image 
@@ -20,11 +23,13 @@ export default function StudentCard() {
               w="135px" 
               h="29px"
               objectFit="contain"
+              alignSelf="flex-start"
             />
 
-            <Box w="1px" h="50px" bg="white" opacity="0.5" />
+            {/* Traço menor */}
+            <Box w="2px" h="100px" bg="white" opacity="0.7" />
 
-            <Stack gap="0">
+            <Box>
               <Heading
                 fontFamily="'Roboto', sans-serif"
                 fontWeight="900"
@@ -44,7 +49,7 @@ export default function StudentCard() {
                 O documento oferece benefícios como meia entrada em cinemas, <br />
                 teatros, shows e estádios. Válido em todo o território nacional.
               </Text>
-            </Stack>
+            </Box>
           </Flex>
 
           <Button
@@ -55,9 +60,10 @@ export default function StudentCard() {
             color="rgb(28, 0, 81)"
             borderRadius="full"
             px="10"
-            h="50px"
+            h="60px"
             fontSize="18px"
             fontWeight="700"
+            flexShrink={0}
             _hover={{ bg: "gray.100" }}
           >
             Solicitar Agora

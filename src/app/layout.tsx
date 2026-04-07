@@ -10,6 +10,9 @@ const catamaran = Catamaran({ subsets: ["latin"], weight: ["400", "700"], variab
 export const metadata: Metadata = {
   title: "Curso em Vídeo",
   description: "Estude gratuitamente tecnologia",
+  icons: {
+    icon: "/cropped-cursoemvideo-logo-32x32.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
