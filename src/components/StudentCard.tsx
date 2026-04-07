@@ -1,12 +1,12 @@
 'use client'
-import { Box, Container, Flex, Heading, Text, Button, Image } from '@chakra-ui/react';
+import { Box, Container, Flex, Heading, Text, Button,Image, Link } from '@chakra-ui/react';
 
 export default function StudentCard() {
   return (
     <Box 
       bgImage="url('https://www.cursoemvideo.com/wp-content/uploads/2023/06/bg-1.jpg')"
       bgSize="cover"
-      bgPosition="center"
+      backgroundPosition="center"
       py="12"
     >
       <Container maxW="1200px">
@@ -52,22 +52,20 @@ export default function StudentCard() {
             </Box>
           </Flex>
 
-          <Button
-            as="a"
-            href="https://www.souestudante.tech/"
-            target="_blank"
-            bg="white"
-            color="rgb(28, 0, 81)"
-            borderRadius="full"
-            px="10"
-            h="60px"
-            fontSize="18px"
-            fontWeight="700"
-            flexShrink={0}
-            _hover={{ bg: "gray.100" }}
-          >
-            Solicitar Agora
-          </Button>
+           <Link href="https://www.souestudante.tech/" target="_blank">
+            <Button
+              bg="white"
+              color="rgb(28, 0, 81)"
+              borderRadius="full"
+              px="10"
+              h="60px"
+              fontSize="18px"
+              fontWeight="700"
+              _hover={{ bg: "gray.100" }}
+            >
+              Solicitar Agora
+            </Button>
+          </Link>
         </Flex>
       </Container>
     </Box>

@@ -1,5 +1,5 @@
 'use client'
-import { Box, Container, Text, Button, Image, VStack } from '@chakra-ui/react';
+import { Box, Container, Text, Button, Image, VStack, Link} from '@chakra-ui/react';
 
 export default function PromoBanner() {
   return (
@@ -53,25 +53,23 @@ export default function PromoBanner() {
             conhecimentos com o Estudonauta!
           </Text>
 
-          <Button
-            as="a"
-            href="https://www.estudonauta.com/"
-            target="_blank"
-            bg="white"
-            color="rgb(28, 0, 81)"
-            borderRadius="full"
-            px="12"
-            h="54px"
-            fontSize="20px"
-            fontWeight="700"
-            _hover={{ 
-              bg: "gray.100",
-              transform: "scale(1.05)"
-            }}
-            transition="all 0.2s"
-          >
-            Conhecer
-          </Button>
+          <Link href="https://www.estudonauta.com/" target="_blank">
+            <Button
+              bg="white"
+              color="rgb(28, 0, 81)"
+              borderRadius="full"
+              px="12"
+              h="54px"
+              fontSize="20px"
+              fontWeight="700"
+              _hover={{ 
+                bg: "gray.100",
+                transform: "scale(1.05)"
+              }}
+            >
+              Conhecer
+            </Button>
+          </Link>
         </VStack>
       </Container>
     </Box>

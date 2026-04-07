@@ -1,5 +1,5 @@
 'use client'
-import { Box, Container, Flex, Heading, Text, Button, Image, Stack } from '@chakra-ui/react';
+import { Box, Container, Flex, Heading, Text, Button, Image, Stack,Link } from '@chakra-ui/react';
 import { useState } from 'react';
 
 export default function Support() {
@@ -32,10 +32,8 @@ export default function Support() {
             <Text fontFamily="var(--font-asap), sans-serif" fontSize="20px" color="rgb(38, 28, 63)">
               Ajude o Curso em Vídeo a continuar <br /> produzindo ainda mais!
             </Text>
-            <Button 
-              as="a"
-              href="https://www.cursoemvideo.com/apoie/"
-              target="_blank"
+            <Link href="https://www.cursoemvideo.com/apoie/" target="_blank">
+              <Button
               bg="white" 
               color="#2222FF" 
               border="2px solid #2222FF" 
@@ -51,6 +49,7 @@ export default function Support() {
             >
               Quero ser um Apoiador!
             </Button>
+            </Link>
           </Stack>
           <Box flex="1" display="flex" justifyContent="center">
             <Image src="https://www.cursoemvideo.com/wp-content/uploads/2019/08/Ativo-11.png" alt="Apoio" maxW="480px" objectFit="contain" />
