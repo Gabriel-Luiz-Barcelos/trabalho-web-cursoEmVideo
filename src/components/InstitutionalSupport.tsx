@@ -48,27 +48,30 @@ export default function InstitutionalSupport() {
         </Flex>
 
         <Flex justify="flex-end" mt="4">
-          <Button
-            as="a"
-            href="https://www.cursoemvideo.com/seja-um-patrocinador/"
+          <Link 
+            href="https://www.cursoemvideo.com/seja-um-patrocinador/" 
             target="_blank"
-            variant="outline"
-            borderColor="rgba(0, 0, 0, 0.1)"
-            borderRadius="4px"
-            bg="transparent"
-            color="rgba(64, 57, 81, 0.63)"
-            fontSize="14px"
-            fontWeight="400"
-            px="6"
-            h="40px"
-            textTransform="uppercase"
-            _hover={{
-              bg: "white",
-              borderColor: "rgba(0, 0, 0, 0.2)"
-            }}
+            _hover={{ textDecoration: "none" }}
           >
-            Seja um apoiador institucional
-          </Button>
+            <Button
+              variant="outline"
+              borderColor="rgba(0, 0, 0, 0.1)"
+              borderRadius="4px"
+              bg="transparent"
+              color="rgba(64, 57, 81, 0.63)"
+              fontSize="14px"
+              fontWeight="400"
+              px="6"
+              h="40px"
+              textTransform="uppercase"
+              _hover={{
+                bg: "white",
+                borderColor: "rgba(0, 0, 0, 0.2)"
+              }}
+            >
+              Seja um apoiador institucional
+            </Button>
+          </Link>
         </Flex>
       </Container>
     </Box>
